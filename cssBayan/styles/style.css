@@ -1,11 +1,24 @@
+body {
+    background-color: rgb(253, 253, 230);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 18px;
+    line-height: 21px;
+}
+
 .wrapper {
-max-width: 80vw;
-margin: 0 auto;
-background-color: rgb(253, 253, 230);
+    max-width: 80vw;
+    margin: 0 auto;
 }
 
 .bayan {
     padding: 0;
+    color: rgb(65, 65, 255);
+}
+.bayan:hover {
+    padding: 0;
+    color: black;
 }
 
 .item {
@@ -21,9 +34,10 @@ background-color: rgb(253, 253, 230);
 }
 
 .itemTitle {
-    display: block;
+    display:flex; 
+    justify-content: space-between;
     padding: 10px;
-    border: 1px solid black;
+    border-top: 2px solid rgb(219, 219, 219);
 }
 
 .itemContent {
@@ -36,11 +50,13 @@ background-color: rgb(253, 253, 230);
     width: 40vw;
 }
 
-.itemInput:checked ~ .itemTitle {
-    background-color: rgb(203, 247, 255);
-
-}
-
 .itemInput:checked ~ .itemContent {
     display: block;
+}
+
+.itemInput:checked ~ .itemTitle{
+    color: black;
+}
+.itemInput:checked ~ .itemTitle > .itemIcon{
+    rotate: 45deg;
 }
