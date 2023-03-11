@@ -17,13 +17,19 @@ body {
     color: rgb(65, 65, 255);
 }
 .bayan:hover {
-    padding: 0;
     color: black;
+}
+.bayan:hover > .item > .itemTitle > .itemIcon {
+    display: block;
 }
 
 .item {
     position: relative;
     margin: 0;
+}
+
+.item:hover .itemContent {
+    display: block;
 }
 
 .itemInput {
@@ -40,6 +46,10 @@ body {
     border-top: 2px solid rgb(219, 219, 219);
 }
 
+.itemIcon {
+    display: none;
+}
+
 .itemContent {
     padding: 10px;
     display: none;
@@ -48,15 +58,32 @@ body {
 .itemContent > img {
     padding: 0;
     width: 40vw;
+    animation: shows 0.3s;
+}
+@keyframes shows {
+    from {
+        width: 10vw;
+    }
+    to {
+        width: 40vw;
+    }
 }
 
 .itemInput:checked ~ .itemContent {
+    display: block;
+}
+.itemInput:checked .itemContent {
     display: block;
 }
 
 .itemInput:checked ~ .itemTitle{
     color: black;
 }
-.itemInput:checked ~ .itemTitle > .itemIcon{
+.itemInput:checked,:hover ~ .itemTitle > .itemIcon{
     rotate: 45deg;
+}
+
+.itemTitle:hover,
+.itemContent:hover {
+    cursor: pointer;
 }
