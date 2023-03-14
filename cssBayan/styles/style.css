@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(253, 253, 230);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1em;
+}
+
+.wrapper {
+    max-width: 82vw;
+    margin: 0 auto;
+}
+
+.bayan {
+    padding: 0;
+    color: rgb(65, 65, 255);
+}
+
+.item {
+    margin: 0;
+}
+
+.item:active {
+    color: rgb(65, 65, 255);
+    opacity: 0.5;
+}
+
+.itemInput {
+    display: none;
+}
+
+.itemTitle {
+    display:flex; 
+    justify-content: space-between;
+    padding: 0.5em;
+    border-top: 0.15em solid rgb(219, 219, 219);
+}
+
+.itemIcon {
+    display: none;
+}
+
+.itemContent {
+    padding: 0 0 0.5em 0;
+    display: none;
+    text-align: center;
+}
+.itemContent > img {
+    padding: 0;
+    width: 40vw;
+    animation: shows 0.5s;
+}
+@keyframes shows {
+    from {
+        width: 15vw;
+    }
+    to {
+        width: 40vw;
+    }
+}
+
+.itemInput:checked ~ .itemContent {
+    display: block;
+}
+.itemInput:checked .itemContent {
+    display: block;
+}
+
+.itemInput:checked ~ .itemTitle{
+    color: black;
+}
+
+.itemInput:checked ~ .itemTitle > .itemIcon {
+    rotate: 45deg;
+}
+
+@media (hover: hover) {
+
+    .bayan:hover {
+        color: black;
+    }
+
+    .bayan:hover > .item > .itemTitle > .itemIcon {
+        display: block;
+    }
+
+    .item:hover .itemContent {
+        display: block;
+    }
+
+    .itemTitle:hover,
+    .itemContent:hover {
+        cursor: pointer;
+    }
+
+    .itemInput:hover ~ .itemTitle > .itemIcon{
+        rotate: 45deg;
+        transition: rotate 0.5s;
+    }
+}
+
+@media (min-width: 480px) {
+    body {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 820px) {
+    body {
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1920px) {
+    body {
+        font-size: 3em;
+    }
+}
+
+@media (pointer:coarse) {
+    .itemIcon {
+        display: block;
+    }
+}
